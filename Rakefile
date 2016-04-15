@@ -2,11 +2,11 @@ require 'rubygems'
 require 'rubygems/package_task'
 require 'jars/installer'
 require 'fileutils'
+require 'rspec/core/rake_task'
 
-spec = Gem::Specification.load('kafka.gemspec')
+spec = Gem::Specification.load('kafka-jar.gemspec')
 
 Gem::PackageTask.new(spec).define
-
 
 desc 'install vendored kafka jars from maven central'
 task :install_jars do
