@@ -1,0 +1,21 @@
+sudo: false
+language: ruby
+cache:
+- bundler
+- directories:
+  - "$HOME/.m2"
+rvm:
+- jruby-1.7.23
+before_install:
+- gem install jar-dependencies
+- bundle install
+- rake install_jars
+deploy:
+  provider: rubygems
+  skip_cleanup: true
+  api_key:
+    secure: o1TWCTuJ4XUC5RM7pFKor6HAzEtBLcMh+TPbvKzgQDpMwWbedTeIIMhONmgjpa1z8fqePR8riWg3+gJpR75WSxxwrGX7jeWxTeakOT+e3agg+V5SMEmJPeNsClcrLjPwjk2762p6g8M5pqFBUPrkPi66C1MWcJ2Jc2pitJMzOYvDG7IM/XpkpShaDQ9q+1pF4WhoisUY5zrCkcVE/peolKTFLJOhM7Ijvlg72TFxQXZDg/7hosBiS48XR5bAcB7AR4zFLxuNAs3pJmdDloWpvxEnSTME7/UGC61M9wuuPvgQSbEPJ+EoMzonZ48WBRmh1vqIqypENxE5dv4OtEUJYHL1+YjXtYMy8u1JAP6iIU3fuL42aT2Yu4qvRwXeRwpyK+ydwgosr+EzcBvYeDPfo7t5ePBZ67mHhO87gpxAS70lynh+/4Ry5ViC19SkFbfcm1+K96+QWXAh3Wcxdv0qTrMT4kMIWLgrzrqSsoWS8cMmC1CCIqyAORoTriilpzVCpD5LwTXIczm0Z26GGTOFqxw3vuarepbvtLVM/sVRcS1IpNOF04W2s76Z4YLaxuCaEjfdgeudEO5Mh8crw7RJUwh2XDNwAsjFqBAnyZbLPEJJIaG4haMibXdmaywsCCWDJedQzSWB/8a6ZAguJP96YaZ6X0562EQGp5y0TnItP0c=
+  gem: kafka-jar
+  on:
+    tags: true
+    repo: talevy/kafka-jar-gem
