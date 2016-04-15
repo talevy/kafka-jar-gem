@@ -13,10 +13,12 @@ Gem::Specification.new do |s|
   s.require_paths = [ 'lib' ]
 
   s.files = Dir[ 'lib/**/*.rb', 'lib/**/*.jar' ]
+  s.test_files = Dir[ 'spec/**/*.rb' ]
 
   s.requirements << "jar 'org.apache.kafka:kafka_2.11', '#{VERSION}'"
 
   s.add_development_dependency 'jar-dependencies', '~> 0.3.2'
   s.add_development_dependency 'ruby-maven', '~> 3.3'
   s.add_development_dependency 'rake', '~> 10.5'
+  s.add_development_dependency 'rspec', '~> 3.1.0'
 end

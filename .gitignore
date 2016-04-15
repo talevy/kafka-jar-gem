@@ -1,0 +1,5 @@
+Gemfile.lock
+.mvn
+pkg
+lib/kafka-jar_jars.rb
+lib/jar-dependencies
